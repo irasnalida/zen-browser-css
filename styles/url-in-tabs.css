@@ -1,0 +1,108 @@
+@media (-moz-bool-pref: "uc.experimental.urlbarInTab") {
+  #tabbrowser-arrowscrollbox tab[selected] {
+    & .tab-icon-stack {
+      width: 0px;
+      opacity: 0;
+    }
+
+    & .tab-label-container {
+      background: -moz-element(#urlbar-input);
+      background-repeat: no-repeat !important;
+      background-position-y: center !important;
+
+      .tab-label {
+        opacity: 0;
+      }
+    }
+
+    .tab-content {
+      &:before {
+        content: '';
+        position: absolute;
+        background: -moz-element(#urlbar-search-mode-indicator-title);
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 22px;
+        width: 150px;
+        top: -9px;
+      }
+    }
+  }
+
+  #urlbar-search-mode-indicator-title {
+    position: absolute !important;
+  }
+
+
+
+  tab[selected]>stack {
+    &:after {
+      height: 0px !important;
+      transition: height 0.9s !important;
+    }
+  }
+
+
+
+  .tab-close-button {
+    display: none !important;
+  }
+
+  
+  #nav-bar {
+    position: relative !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-500px);
+  
+    & #urlbar {
+      position: static !important;
+      top: 0px !important;
+      width: 100% !important;
+      min-width: 1px !important;
+      max-width: !important;
+    }
+  }
+
+  #TabsToolbar {
+    margin-top: -48px
+  }
+
+  #urlbar-input {
+    font-size: 1.15rem !important;
+  }
+
+  .urlbarView {
+    display: none !important;
+    visibility: collapse !important;
+  }
+
+  #identity-box,
+  #page-action-buttons,
+  #tracking-protection-icon-container {
+    display: none !important;
+  }
+
+
+  /*
+  #navigator-toolbox:has(#urlbar[breakout-extend]) tab[selected]>stack {
+    &:after {
+      content: '';
+      position: relative !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      background-image: -moz-element(#urlbar-results) !important;
+      background-repeat: no-repeat !important;
+      background-position: left top !important;
+      background-size: contain !important;
+      top: 2px;
+      right: -2px;
+      width: 98% !important;
+      height: 300px !important;
+      border-radius: 8px;
+      align-self: center !important;
+  
+    }
+  }*/
+}

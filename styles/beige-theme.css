@@ -1,0 +1,40 @@
+:root {
+  --beige-color: rgb(242, 240, 227);
+  --orange-color: rgb(247, 111, 83);
+  --zen-primary-color: var(--orange-color) !important;
+  /*--toolbarbutton-hover-background: color-mix(in srgb, var(--orange-color), transparent 60%) !important;*/
+  --toolbarbutton-active-background: color-mix(in srgb, var(--orange-color), transparent 50%) !important;
+}
+
+#zen-main-app-wrapper {
+  background: color-mix(in srgb, var(--beige-color), transparent 20%) !important;
+}
+
+menupopup,
+panel,
+menu,
+menuitem {
+  --panel-background: color-mix(in srgb, var(--beige-color), white 15%) !important;
+  --panel-item-hover-bgcolor: color-mix(in srgb, var(--orange-color), transparent 85%) !important;
+  --panel-item-active-bgcolor: color-mix(in srgb, var(--orange-color), transparent 70%) !important;
+  --button-hover-bgcolor: var(--panel-item-hover-bgcolor) !important;
+  --button-active-bgcolor: var(--panel-item-active-bgcolor) !important;
+}
+
+/*Dark Mode Colors*/
+@media (prefers-color-scheme: dark) {
+  #zen-main-app-wrapper {
+    background: color-mix(in srgb, var(--beige-color), rgb(0, 0, 0, 0.8) 90%) !important;
+  }
+
+  menupopup,
+  panel,
+  menu,
+  menuitem {
+    --panel-background: color-mix(in srgb, var(--beige-color), rgb(0, 0, 0, 1) 85%) !important;
+    --panel-item-hover-bgcolor: color-mix(in srgb, var(--beige-color), transparent 80%) !important;
+    --panel-item-active-bgcolor: color-mix(in srgb, var(--beige-color), transparent 70%) !important;
+    --button-hover-bgcolor: var(--panel-item-hover-bgcolor) !important;
+    --button-active-bgcolor: var(--panel-item-active-bgcolor) !important;
+  }
+}

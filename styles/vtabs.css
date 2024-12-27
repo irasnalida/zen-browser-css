@@ -1,0 +1,123 @@
+/*tab background color*/
+.tab-background {
+  border: 2px solid transparent;
+}
+
+.tab-background:is([selected], [multiselected]) {
+  --tab-color: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  background-color: var(--tab-color) !important;
+  border: 2px solid var(--tab-color) !important;
+  box-shadow: unset !important;
+  backdrop-filter: unset !important;
+}
+
+#vertical-pinned-tabs-container {
+  & .tabbrowser-tab:not(:hover) .tab-background:not([selected]):not([multiselected]) {
+    background: transparent !important;
+    backdrop-filter: unset !important;
+  }
+
+  & .tab-background {
+    backdrop-filter: unset !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.pinned-essentials-flex.enabled") {
+  & #vertical-pinned-tabs-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+
+    & tab {
+      min-width: calc((100% / 4) - 3px) !important;
+      flex: 1 1 !important;
+
+      & .tab-icon-image {
+        margin: 0px !important;
+      }
+    }
+
+    & .tab-label-container,
+    & .tab-close-button,
+    & .tab-reset-button {
+      display: none !important;
+      visibility: collapse !important;
+    }
+  }
+
+  & #zen-essentials-container {
+    display: flex !important;
+    flex-wrap: wrap;
+
+    & tab {
+      min-width: calc((100% / 4) - 3px);
+      flex: 1 1 !important;
+    }
+  }
+}
+
+/*fix bg color*/
+#vertical-pinned-tabs-container {
+  & .tabbrowser-tab:not(:hover) .tab-background:not([selected]):not([multiselected]) {
+    background: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.07)) !important;
+  }
+}
+
+#zen-essentials-container {
+  & .tab-background {
+    background: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.07)) !important;
+  }
+}
+
+
+/*bottom essentials*/
+#zen-essentials-container {
+  order: 1;
+}
+
+/*better unloaded tabs*/
+tab[pending=true] .tab-label {
+  opacity: 0.8;
+  text-decoration: line-through;
+  /*text-decoration-thickness: 1px !important;*/
+}
+
+/*remove green dot*/
+.tab-content[titlechanged] {
+  background-image: unset !important;
+}
+
+/*workspace switcher style*/
+#zen-workspaces-button{
+  & toolbarbutton[active]{
+    background-color: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.08)) !important;
+  }
+}
+
+#navigator-toolbox{
+  min-width: 232px !important;
+}
+/*scrollbar remove*/
+scrollbox:nth-child(5), #vertical-pinned-tabs-container{scrollbar-width: none !important;}
+
+/*tab loading indicator*/
+tab[busy] .tab-background{
+  animation: tab-loading-otl 1s ease-in-out infinite;
+}
+@keyframes tab-loading-otl {
+  0% {
+    outline: 0px solid rgba(247, 111, 83, 0);
+  }
+
+  50% {
+    outline: 4px solid rgba(247, 111, 83, 0.5);
+  }
+
+  100% {
+    outline: 0px solid rgba(247, 111, 83, 0);
+  }
+}
+
+
+
+

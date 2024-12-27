@@ -1,0 +1,60 @@
+tab-group {
+  display: grid !important;
+  background: color-mix(in srgb, var(--tab-group-color-invert) 10%, transparent) !important;
+  border-radius: calc(var(--border-radius-medium) + 3px);
+  margin-bottom: 4px;
+  border: 2px solid color-mix(in srgb, var(--tab-group-color-invert) 30%, transparent);
+  transition: 0.15s ease-in-out !important;
+
+  & .tab-group-label-container {
+    &:after {
+      display: none !important;
+    }
+
+    &>label {
+      background: transparent !important;
+      border: unset !important;
+      font-weight: 500 !important;
+      text-align: unset !important;
+      color: var(--sidebar-text-color) !important;
+      max-width: 100% !important;
+    }
+  }
+
+  &[collapsed] {
+    padding: 5px 0px 5px 0px !important;
+
+    & tab {
+      visibility: collapse !important;
+    }
+  }
+}
+
+/*icon only mode when pin emoji is in label*/
+tab-group[label*='📌'] {
+  --group-pin-item-count: 4;
+  grid-template-columns: repeat(var(--group-pin-item-count), 1fr) !important;
+
+  & .tab-group-label-container {
+    grid-column: span var(--group-pin-item-count);
+  }
+
+  & tab {
+    & .tab-content {
+      justify-content: center;
+
+      & .tab-icon-image {
+        margin-inline: auto !important;
+      }
+
+      & .tab-label-container,
+      .tab-close-button {
+        visibility: collapse;
+      }
+    }
+  }
+}
+
+tab-group:has(tab[hidden]) {
+  display: none !important;
+}

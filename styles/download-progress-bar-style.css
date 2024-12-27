@@ -1,0 +1,26 @@
+#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer {
+	visibility: hidden;
+	top: calc(50% - 9px);
+	left: calc(50% - 31px) !important;
+	width: 58px !important;
+	height: 12px !important;
+  background: #111 !important;
+	border-radius: 8px !important;;
+	border: 0px solid currentColor !important;
+	display: flex;
+	align-items: center;
+	justify-content: start !important;
+  grid-area: 1 / 1 !important;
+}
+#downloads-indicator-progress-inner {
+	width: var(--download-progress-pcent) !important;
+	height: 7px !important;
+	background: var(--toolbarbutton-icon-fill-attention) !important;
+  margin: 2px !important;
+	border-radius: 8px !important;
+}
+#downloads-button[progress]{
+  stack{
+    width: 64px !important;
+  }
+}

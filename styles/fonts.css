@@ -1,0 +1,15 @@
+* {
+  font-family: 'HarmonyOS Sans' !important;
+}
+
+.menu-text,
+.menu-iconic-highlightable-text,
+.menu-iconic-text,
+.toolbarbutton-text,
+.tab-label {
+  font-size: 1.15rem !important;
+}
+
+.tab-group-label {
+  font-size: 1.1rem !important;
+}
