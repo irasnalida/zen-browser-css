@@ -67,13 +67,14 @@
       right: 0;
       bottom: 0;
       left: 0;
-      transform: translateY(-500px);
+      transform: translateY(-500px) !important;
 
       & #urlbar {
         position: static !important;
         top: 0px !important;
         width: 100% !important;
         min-width: 1px !important;
+        transform: translateY(-500px) !important;
       }
     }
 
