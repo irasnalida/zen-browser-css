@@ -36,8 +36,7 @@
     & #zen-sidebar-top-buttons-customization-target {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(32px, 1fr)) !important;
-      align-items: center;
-      justify-items: center;
+      justify-items: center !important;
 
       & #zen-sidebar-top-buttons-separator {
         display: none !important;
@@ -50,7 +49,7 @@
   & #zen-sidebar-icons-wrapper {
     --toolbarbutton-inner-padding: 6px !important;
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(32px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)) !important;
     gap: 1px !important;
   }
 
