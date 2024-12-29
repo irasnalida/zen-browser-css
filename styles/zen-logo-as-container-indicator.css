@@ -22,11 +22,21 @@ tab {
     opacity: 0.6;
     transition: background-position-x 0.2s 0.15s;
   }
+  &[zen-essential=true]{
+    .tab-context-line {
+      background-position-x: calc(100% + 25px);
+    }
+  }
 
   &[selected] {
     .tab-context-line {
       background-position-x: calc(100% + 14px);
-      opacity: 0.3;
+      opacity: 0.2;
+    }
+    &[zen-essential=true]{
+      .tab-context-line {
+        background-position-x: calc(100% + 19px);
+      }
     }
   }
 
