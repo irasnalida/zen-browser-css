@@ -1,0 +1,15 @@
+@-moz-document url-prefix("chrome://devtools/") {
+  :root {
+    --theme-body-font-size: 12px !important;
+    --theme-code-font-size: 12px !important;
+  }
+
+  #inspector-breadcrumbs span {
+    font-family: 'JetBrains Mono' !important;
+    font-size: 11px !important;
+  }
+
+  .devtools-monospace {
+    font-family: 'JetBrains Mono' !important;
+  }
+}

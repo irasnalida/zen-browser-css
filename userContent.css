@@ -1,6 +1,8 @@
-*{}
+@import url(styles/devtools.css);
 
-:root{
+* {}
+
+:root {
   --beige-color: rgb(242, 240, 227);
   --orange-color: rgb(247, 111, 83);
   --in-content-primary-button-background: color-mix(in srgb, light-dark(var(--orange-color), var(--beige-color)), transparent 40%) !important;
@@ -14,17 +16,19 @@
 body.neterror {
   font-family: 'HarmonyOS Sans' !important;
   background: transparent !important;
-  ::selection{
+
+  ::selection {
     background: light-dark(var(--orange-color), var(--beige-color)) !important;
     color: light-dark(var(--beige-color), var(--orange-color)) !important;
   }
 }
 
-@-moz-document url-prefix("about:"){
-  *{
+@-moz-document url-prefix("about:") {
+  * {
     font-family: "HarmonyOS Sans" !important;
   }
-  :root{
+
+  :root {
     --in-content-page-background: light-dark(var(--beige-color), color-mix(in srgb, var(--beige-color), black 85%)) !important;
     /*--background-color-box: color-mix(in srgb, var(--beige-color), rgba(255,255,255,0.8) 30%) !important;*/
     --card-outline-color: var(--orange-color) !important;
@@ -32,41 +36,50 @@ body.neterror {
     --link-color: var(--orange-color) !important;
     --link-color-hover: var(--orange-color) !important;
   }
-  ::selection{
+
+  ::selection {
     background: light-dark(var(--orange-color), var(--beige-color)) !important;
     color: light-dark(var(--beige-color), var(--orange-color)) !important;
   }
-  .button-link{
+
+  .button-link {
     color: var(--orange-color) !important;
     opacity: 0.9;
     font-weight: 500 !important;
-    &:hover{
+
+    &:hover {
       opacity: 1;
       text-decoration: none !important;
     }
   }
 }
 
-@-moz-document url("about:newtab"), url("about:home"){
-  :root{
+@-moz-document url("about:newtab"), url("about:home") {
+  :root {
     --newtab-background-color: var(--in-content-page-background) !important;
   }
-  .logo-and-wordmark .logo{
+
+  .logo-and-wordmark .logo {
     background-size: 88px !important;
   }
-  .search-inner-wrapper{
+
+  .search-inner-wrapper {
     display: none !important;
   }
 }
 
-@-moz-document url("about:processes"){
-  table, thead{
+@-moz-document url("about:processes") {
+
+  table,
+  thead {
     background: transparent !important;
   }
-  .process{
-    background-color: rgba(0,0,0,0.15);
+
+  .process {
+    background-color: rgba(0, 0, 0, 0.15);
   }
-  .window{
-    background-color: rgba(0,0,0,0.08);
+
+  .window {
+    background-color: rgba(0, 0, 0, 0.08);
   }
 }

@@ -35,7 +35,7 @@
 @media (-moz-bool-pref: "uc.side-bookmark-icon-only.enabled") {
   #navigator-toolbox #personal-bookmarks {
     & #PlacesToolbarItems {
-      grid-template-columns: repeat(auto-fit, minmax(48px, 1fr)) !important;
+      grid-template-columns: repeat(auto-fit, minmax(32px, 1fr)) !important;
 
       &>toolbarbutton {
         &>label {
