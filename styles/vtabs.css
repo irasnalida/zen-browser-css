@@ -118,6 +118,6 @@ tab[busy] .tab-background{
   }
 }
 
-
-
-
+#navigator-toolbox{
+  transition: unset !important;
+}
