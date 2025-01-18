@@ -143,3 +143,25 @@ menu[image^="moz-extension://"], menuitem[image^="moz-extension://"]{
     }
   }
 }
+
+/*transparent bg fix apply only on new tab*//*
+@media (-moz-bool-pref: "browser.tabs.allow_transparent_browser"){
+  body:has(tab[selected]:not([label='New Tab'])) .browserSidebarContainer{
+    background: white !important;
+  }
+}*/
+
+@media not (-moz-bool-pref: "uc.grayscale-workspace-switcher"){
+  #zen-workspaces-button {
+  &:not([as-button="true"]) {
+    & toolbarbutton:not([active]) {
+      @media not (-moz-bool-pref: "zen.workspaces.hide-deactivated-workspaces") {
+        & {
+          opacity: 0.8 !important;
+          filter: grayscale(0) !important;
+        }
+      }
+    }
+  }
+}
+}
