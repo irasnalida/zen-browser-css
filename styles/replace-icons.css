@@ -2,9 +2,7 @@
 
 /*zen logo as icons*/
 #PanelUI-menu-button,
-#appMenu-more-button2,
-#zen-workspace-actions-menu-icon,
-#identity-box[pageproxystate="valid"].chromeUI #identity-icon {
+#identity-box[pageproxystate="valid"].chromeUI #identity-icon{
   list-style-image: var(--logo-circle-style) !important;
 }
 
