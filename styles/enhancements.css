@@ -8,6 +8,7 @@
   box-shadow: none !important;
   /*animation: tab-loading-otl 1s ease-in-out infinite;*/
 }
+
 /*
 :root:has(tab[busy]) {
   .browserSidebarContainer {
@@ -48,9 +49,11 @@
   /*fix for bottom toobar button container*/
   & #zen-sidebar-icons-wrapper {
     --toolbarbutton-inner-padding: 6px !important;
-    display: grid !important;
+    /*display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(32px, 1fr)) !important;
-    gap: 1px !important;
+    gap: 1px !important;*/
+    justify-content: start !important;
+    flex-wrap: wrap;
   }
 
   /*workspace switcher in tab area fix*/
@@ -63,14 +66,16 @@
   }
 }
 
-@media (-moz-bool-pref: "uc.bottom-workspace-switcher.enabled"){
-  #zen-workspaces-button{
-    order: 1;
-    margin-block: 2px -4px !important;
+@media (-moz-bool-pref: "uc.bottom-workspace-switcher.enabled") {
+  #zen-workspaces-button {
+    /*order: 1;*/
+    /*margin-block: 2px -4px !important;*/
+    flex: 1 1 100%;
   }
 }
 
 :root[zen-single-toolbar="true"] {
+
   /*slim window controls*/
   & .titlebar-buttonbox-container {
     position: fixed !important;
@@ -107,35 +112,57 @@
 
 /*compact context menus*/
 @media (-moz-bool-pref: "uc.compact-menu.enabled") {
-  menuitem, menu, #appMenu-popup toolbarbutton, #appMenu-popup toolbaritem{
+
+  menuitem,
+  menu,
+  #appMenu-popup toolbarbutton,
+  #appMenu-popup toolbaritem {
     padding-block: 0.2em !important;
   }
-  #appMenu-popup toolbarbutton, #appMenu-popup toolbaritem{
+
+  #appMenu-popup toolbarbutton,
+  #appMenu-popup toolbaritem {
     margin-block: 0px !important;
   }
-  menugroup>menuitem{
+
+  menugroup>menuitem {
     height: 24px !important;
   }
-  menuseparator, toolbarseparator{visibility: collapse}
-  #appMenu-zoom-controls{border: unset !important;}
+
+  menuseparator,
+  toolbarseparator {
+    visibility: collapse
+  }
+
+  #appMenu-zoom-controls {
+    border: unset !important;
+  }
 }
-.bookmark-item > label{
+
+.bookmark-item>label {
   padding-left: 0px !important;
 }
-menu[image^="moz-extension://"], menuitem[image^="moz-extension://"]{
-  & .menu-iconic-left{
+
+menu[image^="moz-extension://"],
+menuitem[image^="moz-extension://"] {
+  & .menu-iconic-left {
     margin-right: -1px !important;
   }
 }
 
 /*remove padding and rounded corner*/
-@media (-moz-bool-pref: "uc.remove-browser-padding"){
-  #zen-appcontent-wrapper, #zen-tabbox-wrapper, .browserSidebarContainer{
+@media (-moz-bool-pref: "uc.remove-browser-padding") {
+
+  #zen-appcontent-wrapper,
+  #zen-tabbox-wrapper,
+  .browserSidebarContainer {
     margin: 0px !important;
   }
-  .browserSidebarContainer{
+
+  .browserSidebarContainer {
     border-radius: 0px !important;
   }
+
   :root[zen-single-toolbar="true"]:not([customizing]) {
     & #zen-appcontent-navbar-container {
       height: 0px !important;
@@ -144,24 +171,25 @@ menu[image^="moz-extension://"], menuitem[image^="moz-extension://"]{
   }
 }
 
-/*transparent bg fix apply only on new tab*//*
+/*transparent bg fix apply only on new tab*/
+/*
 @media (-moz-bool-pref: "browser.tabs.allow_transparent_browser"){
   body:has(tab[selected]:not([label='New Tab'])) .browserSidebarContainer{
     background: white !important;
   }
 }*/
 
-@media not (-moz-bool-pref: "uc.grayscale-workspace-switcher"){
+@media not (-moz-bool-pref: "uc.grayscale-workspace-switcher") {
   #zen-workspaces-button {
-  &:not([as-button="true"]) {
-    & toolbarbutton:not([active]) {
-      @media not (-moz-bool-pref: "zen.workspaces.hide-deactivated-workspaces") {
-        & {
-          opacity: 0.8 !important;
-          filter: grayscale(0) !important;
+    &:not([as-button="true"]) {
+      & toolbarbutton:not([active]) {
+        @media not (-moz-bool-pref: "zen.workspaces.hide-deactivated-workspaces") {
+          & {
+            opacity: 0.8 !important;
+            filter: grayscale(0) !important;
+          }
         }
       }
     }
   }
-}
 }

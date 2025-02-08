@@ -1,5 +1,17 @@
 :root:not([customizing]) {
   @media (-moz-bool-pref: "uc.experimental.urlbarInTab") {
+    tab[selected] {
+      & .tab-label-container {
+        background: -moz-element(#urlbar-input);
+        background-repeat: no-repeat !important;
+        background-position-y: center !important;
+
+        .tab-label {
+          opacity: 0;
+        }
+      }
+    }
+
     #navigator-toolbox:has(#urlbar[focused]) #tabbrowser-arrowscrollbox tab[selected] {
       & .tab-icon-stack {
         background-image: -moz-element(#identity-icon) !important;
