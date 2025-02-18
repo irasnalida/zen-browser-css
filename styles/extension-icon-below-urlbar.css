@@ -1,0 +1,19 @@
+#TabsToolbar-customization-target {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, 42px);
+  grid-template-rows: 42px 1fr;
+
+  /*flex-direction: row !important;*/
+  &>toolbaritem {
+    grid-row: 1;
+    height: 42px !important;
+    padding-left: 0px !important;
+    margin-inline: 0px !important;
+    background: transparent !important;
+  }
+
+  &>tabs {
+    grid-row: 2;
+    grid-column: span 99
+  }
+}
