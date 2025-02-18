@@ -32,8 +32,8 @@ menuitem {
   menu,
   menuitem {
     --panel-background: color-mix(in srgb, var(--beige-color), rgb(0, 0, 0, 1) 85%) !important;
-    --panel-item-hover-bgcolor: color-mix(in srgb, var(--beige-color), transparent 80%) !important;
-    --panel-item-active-bgcolor: color-mix(in srgb, var(--beige-color), transparent 70%) !important;
+    --panel-item-hover-bgcolor: color-mix(in srgb, var(--orange-color), transparent 50%) !important;
+    --panel-item-active-bgcolor: color-mix(in srgb, var(--orange-color), transparent 70%) !important;
     --button-hover-bgcolor: var(--panel-item-hover-bgcolor) !important;
     --button-active-bgcolor: var(--panel-item-active-bgcolor) !important;
   }
